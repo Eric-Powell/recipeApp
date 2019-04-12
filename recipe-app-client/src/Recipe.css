@@ -1,0 +1,56 @@
+.recipe {
+  width: 32vw;
+  border: solid navy 3px;
+  border-radius: 20px;
+  margin: 2px;
+  position: relative;
+}
+
+.info-wrapper {
+  padding-bottom: 15%;
+}
+
+.info-wrapper > * {
+  word-wrap: break-word;
+  margin: 2%;  
+}
+
+.title {
+  font-size: 2vw;
+}
+
+.item-label {
+  font-size: 1.5vw;
+}
+
+.ingredients, .instructions {
+  font-size: 1.25vw;
+  margin-left: 3%
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 17px;
+
+}
+
+.delete-button {
+  float: right;
+  font-size: 1vw;
+  border: solid grey 2px;
+  border-radius: 3px;
+  font-weight: bolder;
+  padding: 1%;
+  margin: 2%;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+}
+
+.delete-button:hover {
+  border: solid black 3px;
+  background-color:orangered;
+}

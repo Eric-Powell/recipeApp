@@ -1,0 +1,29 @@
+.app-header {
+  text-align: center;
+}
+
+.app-name {
+  font: 7vw 'Cookie', Helvetica, sans-serif;
+  color: purple;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  padding: 1% 3%;
+}
+
+
+.recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2% .5% 2% 1%;
+}
+
+.add-new-recipe-button {
+  padding: 1%;
+  font-size: 1.5vw;
+  border-radius: 20px;
+  margin: 1%;
+}
+
+.add-new-recipe-button:hover {
+  background-color: lightskyblue;
+}

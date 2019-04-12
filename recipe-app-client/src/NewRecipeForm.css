@@ -1,0 +1,64 @@
+.form {
+  width: 25vw;
+  border: solid gray 3px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 0 1%;
+  font-size: 1.5vw;
+}
+
+.form > div {
+  padding: 1% 0 1% 0;
+}
+
+input {
+  height: 1.5vw;
+  font-size: 70%;
+}
+
+.img-wrapper input {
+    font-size: 60%
+}
+
+.close-button {
+  float: right;
+  border: solid grey 2px;
+  border-radius: 3px;
+  margin-top: 10px;
+
+}
+
+.close-button:hover {
+  border: solid black 3px;
+  font-weight: bold;
+}
+
+.title-wrapper {
+  margin-top: 10%;
+}
+
+textarea {
+  width: 98%;
+  font-size: 70%;
+}
+
+.save-button-wrapper {
+  margin-bottom: 10%;
+  width: 100%;
+
+}
+
+.save-button {
+  /* align-self: flex-end; */
+  float: right;
+  font-size: 1vw;
+  border: solid grey 2px;
+  border-radius: 3px;
+  font-weight: bolder;
+  padding: 1%;
+}
+
+.save-button:hover {
+  border: solid black 3px;
+  background-color: lightskyblue;
+}
