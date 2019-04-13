@@ -3,7 +3,7 @@ import axios from 'axios';
 import Recipe from './Recipe';
 import NewRecipeForm from './NewRecipeForm';
 import './App.css';
-// import 'typeface-cookie';
+import 'typeface-cookie';
 
 class App extends Component {
   
