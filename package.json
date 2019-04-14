@@ -17,7 +17,11 @@
   "bugs": {
     "url": "https://github.com/Eric-Powell/recipeApp/issues"
   },
-  "homepage": "https://github.com/Eric-Powell/recipeApp#readme",
+  "homepage": "https://infinite-ridge-41467.herokuapp.com/",
+  "engines": {
+    "node": "11.10",
+    "npm": "6.7"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",

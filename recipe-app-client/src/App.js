@@ -18,8 +18,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/recipes')
+    console.log(process.env.NODE_ENV)
+    let url = 'http://localhost:5000/recipes';
+    if (process.env.NODE_ENV === 'production') {
+      url = 'https://infinite-ridge-41467.herokuapp.com/recipes';
+    } 
+    axios.get(url)
       .then(response => {
+        // console.log(response)
         let highestIdx = response.data.map(item => item.id).sort((a, b) => b - a).shift() + 1;
         this.setState({recipes: response.data, newRecipeID: highestIdx})
       })
@@ -33,9 +39,13 @@ class App extends Component {
   )
 
   onSave = (recipe) => {
+    let url = 'http://localhost:5000/add';
+    if (process.env.NODE_ENV === 'production') {
+      url = 'https://infinite-ridge-41467.herokuapp.com/add';
+    } 
     const newRecipe = {...recipe, id: this.state.newRecipeID}
 
-    axios.post('http://localhost:5000/add', newRecipe)
+    axios.post(url, newRecipe)
       .then(res => console.log(res.data))
       .catch()
 
@@ -48,9 +58,13 @@ class App extends Component {
   }
 
   onDelete = (id) => {
+    let url = 'http://localhost:5000/recipes/delete';
+    if (process.env.NODE_ENV === 'production') {
+      url = 'https://infinite-ridge-41467.herokuapp.com/recipes/delete';
+    } 
     const recipes = this.state.recipes.filter(r => r.id !== id);
     this.setState({recipes});
-    axios.post('http://localhost:5000/recipes/delete', {id});    
+    axios.post(url, {id});    
   }
 
   render() {
