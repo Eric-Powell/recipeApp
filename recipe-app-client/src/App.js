@@ -41,8 +41,10 @@ class App extends Component {
     }    
 
     axios.post(url, newRecipe)
-      .then(res => console.log(res.data))
-      .catch()
+      .then()
+      .catch(function (error){
+        console.log(error);
+      })
 
     this.setState((prevState, props) => {
       return {
