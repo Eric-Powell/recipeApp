@@ -19,27 +19,28 @@ class Recipe extends Component {
         <li key={`${title}-${i}`}>{ing}</li>
       )
     });
+
     const titleCase = (str) => {
       return str.split(' ')
         .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase())
         .join(' ')
     };
 
-      return (
-        <div className="recipe">
-          <img src={img} alt={title}/>
-          <div className="info-wrapper">              
-            <div className="title">{titleCase(title)}</div>              
-            <div className="item-label">Ingredients: 
-              <div className="ingredients">{ingredientsList}</div>
-            </div>
-            <div className="item-label">Instructions: 
-              <div className="instructions">{instructions}</div>
-            </div>
+    return (
+      <div className="recipe">
+        <img src={img} alt={title}/>
+        <div className="info-wrapper">              
+          <div className="title">{titleCase(title)}</div>              
+          <div className="item-label">Ingredients: 
+            <div className="ingredients">{ingredientsList}</div>
           </div>
-            <button className="delete-button" type="button" onClick={() => onDelete(id)}>DELETE</button>  
+          <div className="item-label">Instructions: 
+            <div className="instructions">{instructions}</div>
+          </div>
         </div>
-      );
+          <button className="delete-button" type="button" onClick={() => onDelete(id)}>DELETE</button>  
+      </div>
+    );
   }
 }
 

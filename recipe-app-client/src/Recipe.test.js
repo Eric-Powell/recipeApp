@@ -51,10 +51,8 @@ const recipes = [
 
 
 it('renders without crashing', () => {
-    // console.log(Recipe);
   const div = document.createElement('div');
   const recipeList = recipes.map((recipe, i) => (
-    // <Recipe key={recipe.id} {...recipe} onDelete={this.onDelete}/>
     ReactDOM.render(<Recipe key={recipe.id} {...recipe} onDelete={onDelete}/>, div)
   ));
 });
