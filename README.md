@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Node version >8.11 required, to get the latest version of node using nvm or homebrew from the command line you can use:
+Node version >11.x required, to get the latest version of node using nvm or homebrew from the command line you can use:
 
 ```
 nvm install node
@@ -29,7 +29,7 @@ npm install
 npm run server
 ```
 
-Start the client-side server, from a different command line window cd down into the recipe-app-client directory [ /recipeApp/recipe-client-app ], execute:
+Start the client-side server, from a different command line window cd down into the recipe-app-client directory [ /recipeApp/recipe-app-client ], execute:
 
 ```
 npm install
@@ -59,11 +59,12 @@ This is a full stack web application built using the MERN stack. The backend is 
 
 * I decided to use create-react-app to quickly setup my frontend and used their boilerplate scaffolding to get started - [create-react-app](https://github.com/facebook/create-react-app)
 * I selected MongoDB and the ORM Mongoose since it is a quick and efficient way to store data in an easy to visualize document/schema setup that offers control and flexibility - [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
-* I decided to use Express with Node.js to create the server for the web application since it’s a fast, unopinionated, and minimalist framework with robust features - [express](https://expressjs.com/)
+* I decided to use Express with Node.js to create the server for the web application since it’s a fast, unopinionated, and minimalist framework with robust features - [Express](https://expressjs.com/)
 
 Plans for this project in the future include:
 * add additional test coverage 
 * add feature to edit recipes
+* add user login
 * add search feature 
 * remove create-react-app scaffolding and boilerplate (unnecessary)
 
