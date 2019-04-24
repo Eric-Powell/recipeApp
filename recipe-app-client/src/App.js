@@ -34,7 +34,8 @@ class App extends Component {
   onClose = () => this.setState({showNewRecipeForm: false})
 
   onSave = (recipe) => {
-    const newRecipe = {...recipe, id: this.state.newRecipeID};
+    let createIngredientsArray = recipe.ingredients.split(',').map(item => item.trim());
+    const newRecipe = {...recipe, ingredients: createIngredientsArray, id: this.state.newRecipeID};
     let url = 'http://localhost:5000/add';
     if (process.env.NODE_ENV === 'production') {
       url = 'https://infinite-ridge-41467.herokuapp.com/add';

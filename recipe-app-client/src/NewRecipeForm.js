@@ -12,22 +12,13 @@ class NewRecipeForm extends Component {
     super(props);
     this.state = {
       title: '',
-      ingredients: [''],
+      ingredients: '',
       instructions: '',
       img: ''
     }
   }
 
   handleChange = (e) => this.setState({[e.target.name]: e.target.value})
-
-  handleChangeIngred = (e) => {
-    if (e.target.value) {
-      let setIngArray = e.target.value.split(",").map(item => item.trim());
-      this.setState({ingredients: setIngArray});
-    } else {
-      this.setState({ingredients: ['']});
-    }
-  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +57,7 @@ class NewRecipeForm extends Component {
                 value={ingredients}
                 required={true}
                 type='text'
-                onChange={this.handleChangeIngred} />
+                onChange={this.handleChange} />
           </div>
 
           <div className="instructions-wrapper">
