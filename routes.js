@@ -11,7 +11,7 @@ router.get('/recipes', (req, res) => {
   });
 });
 
-router.post('/add', (req, res) => {
+router.post('/recipes/add', (req, res) => {
   Recipe.create({...req.body}, (err, data) => {
     if (err) {
       console.log(err);

@@ -15,12 +15,13 @@ class App extends Component {
     };
   }
 
+  urlHandler() {
+    return process.env.NODE_ENV === 'production' ? 'https://infinite-ridge-41467.herokuapp.com/recipes' : 'http://localhost:5000/recipes';
+  }
+
   componentDidMount() {
-    let url = 'http://localhost:5000/recipes';
-    if (process.env.NODE_ENV === 'production') {
-      url = 'https://infinite-ridge-41467.herokuapp.com/recipes';
-    } 
-    
+    const url = this.urlHandler();
+
     axios.get(url)
       .then(response => {
         let highestIdx = response.data.map(item => item.id).sort((a, b) => b - a).shift() + 1;
@@ -35,11 +36,8 @@ class App extends Component {
 
   onSave = (recipe) => {
     let createIngredientsArray = recipe.ingredients.split(',').map(item => item.trim());
-    const newRecipe = {...recipe, ingredients: createIngredientsArray, id: this.state.newRecipeID};
-    let url = 'http://localhost:5000/add';
-    if (process.env.NODE_ENV === 'production') {
-      url = 'https://infinite-ridge-41467.herokuapp.com/add';
-    }    
+    const newRecipe = {...recipe, ingredients: createIngredientsArray, id: this.state.newRecipeID};    
+    const url = this.urlHandler() + '/add';
 
     axios.post(url, newRecipe)
       .then()
@@ -57,10 +55,7 @@ class App extends Component {
 
   onDelete = (id) => {
     const recipes = this.state.recipes.filter(r => r.id !== id);
-    let url = 'http://localhost:5000/recipes/delete';
-    if (process.env.NODE_ENV === 'production') {
-      url = 'https://infinite-ridge-41467.herokuapp.com/recipes/delete';
-    }     
+    const url = this.urlHandler() + '/delete';
 
     this.setState({recipes});
     axios.post(url, {id});    
